@@ -70,4 +70,51 @@ class HashTable {
         }
         return min;
     }
+    void printOddEven() {
+        System.out.print("Odd elements: ");
+        for (int i = 0; i < SIZE; i++) {
+            for (Integer item : table[i]) {
+                if (item % 2 != 0) {
+                    System.out.print(item + " ");
+                }
+            }
+        }
+        System.out.println();
+        System.out.print("Even elements: ");
+        for (int i = 0; i < SIZE; i++) {
+            for (Integer item : table[i]) {
+                if (item % 2 == 0) {
+                    System.out.print(item + " ");
+                }
+            }
+        }
+        System.out.println();
+    }
+}
+
+public class Hash {
+    public static void main(String[] args) {
+        HashTable hashtable = new HashTable();
+
+        hashtable.insert(10);
+        hashtable.insert(20);
+        hashtable.insert(25);
+        hashtable.insert(35);
+        hashtable.insert(44);
+        hashtable.insert(39);
+        hashtable.insert(99);
+
+        System.out.println("Hash table:");
+        hashtable.display();
+
+        System.out.println("Sum: " + hashtable.sum());
+        System.out.println("Max: " + hashtable.max());
+        System.out.println("Min: " + hashtable.min());
+
+        System.out.println("Odd and even:");
+        hashtable.printOddEven();
+
+        hashtable.delete(20);
+        hashtable.display();
+    }
 }
